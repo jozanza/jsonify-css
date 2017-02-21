@@ -20,17 +20,17 @@
 
 ## Usage
 
-  1. Require the module
-  2. Pass it options
-  3. Parse some css text
-
 ```js
-const jsonify = require('jsonify-css')({
-  // used to resolve local url paths when converting to data-uri's
-  root: './'
+// 1. Require the module
+const jsonify = require('jsonify-css')
+
+// 2. Pass it options
+const toJSON = jsonify({
+  root: './' // helps inline local url(...)'s as data-uri's
 });
 
-const css = jsonify(`
+// 3. Parse some css text
+const json = toJSON(`
   @charset 'UTF8'
   .foo { width: 480px; }
   .bar { width: 320px; color: red; }
@@ -48,13 +48,15 @@ const css = jsonify(`
     src: url('./fonts/open-sans.woff');
   }
 `);
+
 /* outputs the following:
 {
   charset: [{
     '@charset': 'UTF-8'
   }],
   rules: [{
-    '.foo': { width: '480px' },
+    '.foo': { width: '480px' }
+  }, {
     '.bar': { width: '320px', color: 'red' }
   }],
   media: [{
