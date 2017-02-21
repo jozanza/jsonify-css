@@ -1,0 +1,23 @@
+{
+  "name": "jsonify-css",
+  "version": "0.0.1",
+  "description": "parses a css string into a convenient json structure",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/jozanza/jsonify-css.git"
+  },
+  "scripts": {
+    "test": "nyc ava"
+  },
+  "dependencies": {
+    "css": "2.2.1",
+    "datauri": "1.0.5"
+  },
+  "devDependencies": {
+    "ava": "0.18.1",
+    "coveralls": "2.11.16",
+    "nyc": "10.1.2"
+  }
+}
