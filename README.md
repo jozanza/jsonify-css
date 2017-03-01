@@ -16,7 +16,7 @@
 
 ## Installation
 
-`$ yarn install jsonify-css`
+`$ yarn add jsonify-css`
 
 ## Usage
 

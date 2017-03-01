@@ -4,6 +4,7 @@ import parse from './parse';
 test('basic rules', t => {
   const opts = { root: '' };
   const input = `
+  /* comment should be ignored */
   .foo { width: 100%; }`;
   const output = parse(opts)(input);
   t.snapshot(output);
