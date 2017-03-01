@@ -5,6 +5,7 @@ const _ = require('./utils');
 
 const declarations = exports.declarations = ctx => (a, b) => {
   const c = {};
+  if (b.type === 'comment') return a;
   if (b.property === 'src') {
     // convert rules like `src: url("path/to/local/file")` to data-uris
     const value = b.value
