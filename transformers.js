@@ -14,10 +14,10 @@ const declarations = exports.declarations = ctx => (a, b) => {
         : x.match(/\(([^)]+)\)/g)
           .map(src => src.substr(2, src.length - 4))
           .map(src => {
-            const _src = url.parse(path.join(ctx, src));
-            return _src.protocol
-              ? `url("${src}")`
-              : `url("${toDataURI(_src.pathname)}")`;
+            let _src = url.parse(src);
+            if (_src.protocol) return `url("${src}")`
+            _src = url.parse(path.join(ctx, src));
+            return `url("${toDataURI(_src.pathname)}")`;
           })
           .filter(x => x))
       .join(' ')

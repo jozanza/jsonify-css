@@ -1,6 +1,6 @@
 {
   "name": "jsonify-css",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "parses a css string into a convenient json structure",
   "main": "index.js",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "datauri": "1.0.5"
   },
   "devDependencies": {
-    "ava": "0.18.1",
+    "ava": "0.18.2",
     "coveralls": "2.11.16",
     "nyc": "10.1.2"
   }
